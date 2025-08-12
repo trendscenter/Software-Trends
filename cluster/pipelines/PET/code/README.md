@@ -13,4 +13,4 @@ git checkout main
 chmod 775 ./cluster/pipelines/PET/code/zinit.sh
 ./cluster/pipelines/PET/code/zinit.sh
 ```
-2) create a symbilic link using the following
+2) create a symbilic link using the following: ln -s /data/collaboration/ADNI_PET/cluster/images/PET/petprep_hmc-0.0.6.sif ./petprep_hmc-0.0.6.sif
