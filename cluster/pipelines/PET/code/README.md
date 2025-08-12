@@ -13,4 +13,5 @@ git checkout main
 chmod 775 ./cluster/pipelines/PET/code/zinit.sh
 ./cluster/pipelines/PET/code/zinit.sh
 ```
-2) create a symbilic link using the following: ln -s /data/collaboration/ADNI_PET/cluster/images/PET/petprep_hmc_0.0.6.sif ./petprep_hmc_0.0.6.sif
+2) create a symbilic link using the following: ln -s /data/collaboration/ADNI_PET/cluster/images/PET/petprep_hmc_0.0.6.sif ./petprep_hmc_0.0.6.sif 
+lease make sure your singularity version is later than June 2023, perhaps by using the command singularity inspect --labels my_singularity_file_image.sif)
