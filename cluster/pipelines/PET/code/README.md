@@ -1,4 +1,4 @@
-version 1.0.1
+version v1.0.0.1
 
 Code framework for the PETPrep Pipeline started Aug. 12, 2025 by Cyrus Eierud and Helen Petropoulos
 To process PET (FBP, FBB, TAU or FDG) in the cluster do the following:
