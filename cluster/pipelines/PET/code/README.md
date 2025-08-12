@@ -1,4 +1,4 @@
-version 1.0.0
+version 1.0.1
 
 Code framework for the PETPrep Pipeline started Aug. 12, 2025 by Cyrus Eierud and Helen Petropoulos
 To process PET (FBP, FBB, TAU or FDG) in the cluster do the following:
@@ -13,4 +13,4 @@ git checkout main
 chmod 775 ./cluster/pipelines/PET/code/zinit.sh
 ./cluster/pipelines/PET/code/zinit.sh
 ```
-2) create a symbilic link using the following: ln -s /data/collaboration/ADNI_PET/cluster/images/PET/petprep_hmc-0.0.6.sif ./petprep_hmc-0.0.6.sif
+2) create a symbilic link using the following: ln -s /data/collaboration/ADNI_PET/cluster/images/PET/petprep_hmc_0.0.6.sif ./petprep_hmc_0.0.6.sif
