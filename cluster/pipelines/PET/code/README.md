@@ -13,7 +13,7 @@ git checkout main
 chmod 775 ./cluster/pipelines/PET/code/zinit.sh
 ./cluster/pipelines/PET/code/zinit.sh
 ```
-2) create a symbolic link using the following: `ln -s /data/collaboration/ADNI_PET/cluster/images/PET/petprep_hmc.sif ./petprep_hmc.sif`
+2) create a symbolic link using the following: ==ln -s /data/collaboration/ADNI_PET/cluster/images/PET/petprep_hmc.sif ./petprep_hmc.sif==
 3) The current version of this image uses petprep_hmc v.0.0.6 and python 3.9.9. You can check the singularity version of the image by typing the following command:
    `singularity inspect --labels petprep_hmc.sif`
 4) To run the image, make sure that singularity is in your path and type:
