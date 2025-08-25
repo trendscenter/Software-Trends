@@ -1,27 +1,53 @@
-version v1.0.0.2
+# PETPrepMATLAB
 
-Code framework for the PETPrep Pipeline started Aug. 12, 2025 by Cyrus Eierud and Helen Petropoulos
-To process PET (FBP, FBB, TAU or FDG) in the cluster do the following:
+## Description
 
-1) Create your BIDS root directory, run the following code in that folder:
+The `PETPrep` pipeline is a state-of-the-art PET preprocessing pipeline (wrapper) for MATLAB. This pipeline is designed to execute multiple preprocessing steps on BIDS structured datasets that have at least one dynamic PET scan and one anatomical MRI scan. The key steps integrated within the pipeline include:
+
+- **Motion correction**
+- **Co-registration**
+- **Segmentation**
+- **Partial volume correction**
+- **Kinetic modeling**
+
+## Usage
+
+To utilize the `PETPrep` function in your MATLAB environment:
+
+```matlab
+PETPrep(data_dir, config)
 ```
-git clone --no-checkout https://github.com/trendscenter/Software-Trends.git
-cd Software-Trends
-git sparse-checkout init --no-cone
-git sparse-checkout set cluster/pipelines/PET
-git checkout main
-chmod 775 ./cluster/pipelines/PET/code/zinit.sh
-./cluster/pipelines/PET/code/zinit.sh
-```
-2) create a symbolic link using the following:
-```
-ln -s /data/collaboration/ADNI_PET/cluster/images/PET/petprep_hmc.sif ./petprep_hmc.sif
-```
-3) The current version of this image uses petprep_hmc v.0.0.6 and python 3.9.9. You can check the singularity version of the image by typing the following command:
-```
-singularity inspect --labels petprep_hmc.sif
-```
-4) To run the image, make sure that singularity is in your path and type:
-```
-singularity exec --contain --workdir <singularity workdir> -B <path to data directory>:/data,/trdapps/linux-x86_64/bin/fsl-6.0.6.5:/fsl,/sysapps/ubuntu-applications/freesurfer/7.4.1/freesurfer:/freesurfer petprep_hmc.sif bash -c "export PATH=/root/.pyenv/bin:/root/.pyenv/versions/3.9.9/bin:/freesurfer/bin:/fsl/bin:$PATH && export LD_LIBRARY_PATH=/root/.pyenv/versions/3.9.9/lib && export FREESURFER_HOME=/freesurfer && export FSLDIR=/fsl && source $FSLDIR/etc/fslconf/fsl.sh && export SUBJECTS_DIR=/freesurfer/subjects && python3 /computation/run.py --bids_dir /data --output_dir /data/derivatives/petprep_hmc --analysis_level participant" 2>&1 | tee singularity.out`
-```
+
+### Parameters:
+
+- **data_dir (str)**: This is the path directing to the BIDS data directory.
+- **config (str)**: This is the path directing to the PETPrep configuration file. This config should be placed in a 'code' directory in the main BIDS directory. Example: 'config1.json'.
+
+**Note:** The function doesn't return any values.
+
+## Sequential Steps Enforced by the Pipeline:
+
+1. Transition to the BIDS data directory.
+2. Integrate BIDS data into MATLAB.
+3. Incorporate the configuration file.
+4. Initiate derivatives directories.
+5. Activate `ReconAll` for FreeSurfer reconstruction.
+6. Perform GTM segmentation with `GTMSeg`.
+7. Convert FreeSurfer output to BIDS structure with `ConvertFS2BIDS`.
+8. Perform motion correction (various methods available).
+9. Co-register with `CoReg` and plot results with `PlotCoReg`.
+10. Perform GTM PVC with `GTMPVC`.
+11. Convert PETsurfer output to BIDS structure with `PETsurfer2TAC`.
+12. Perform kinetic modeling (various models available).
+
+## Author
+
+Martin Norgaard, Stanford University, 2022.
+
+## License
+
+[License details, if any]
+
+## Acknowledgements
+
+[Optional section for any acknowledgements or citations]
