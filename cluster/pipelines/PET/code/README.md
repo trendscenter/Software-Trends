@@ -12,3 +12,4 @@ The singularity image can be symbolically linked to a working directory using th
 ```
 ln -s /data/collaboration/ADNI_PET/cluster/images/PET/petprep_hmc.sif ./petprep_hmc.sif
 ```
+and can be run using the `slurm_PET_petprep_hmc.sh` file.
