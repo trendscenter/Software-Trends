@@ -2,6 +2,8 @@ Code framework for the PETPrep Pipeline started Aug. 12, 2025 by Cyrus Eierud an
 
 version 1.0.0.2
 
+Please note that instruction of how to move files to production after the script processing is found [here:])https://github.com/trendscenter/Software-Trends/blob/main/cluster/pipelines/PET/code/docs/post_script_2production.md)
+
 To process PET (FBP, FBB, TAU or FDG) in the cluster do the following:
 
 Create your BIDS root directory, run the following code in that folder:
