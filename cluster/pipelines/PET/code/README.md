@@ -1,11 +1,7 @@
-Created Aug 12, 2025 by Cyrus Eierud and Helen Petropoulos.
+Code framework for the PETPrep Pipeline started Aug. 12, 2025 by Cyrus Eierud and Helen Petropoulos
 
 version 1.0.0.2
 
-This github code directory contains scripts to preprocess PET data according to NeuroMark standards. To obtain the software, cd into the working directory and execute the following:
-```
-
-Code framework for the PETPrep Pipeline started Aug. 12, 2025 by Cyrus Eierud and Helen Petropoulos
 To process PET (FBP, FBB, TAU or FDG) in the cluster do the following:
 
 Create your BIDS root directory, run the following code in that folder:
