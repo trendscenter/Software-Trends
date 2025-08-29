@@ -9,12 +9,12 @@ First all the PET scripts (FreeSurfer, MC, PetPrep, intensity normalisation) hav
 - All QC has been done to https://docs.google.com/spreadsheets/d/1ujWI1YUYLJj9URVRmd4W2ib9e5nP-j2cJ82hFlnV6JU/edit?gid=385395271#gid=385395271
 
 Then we should move the results to production the following way
-- Before we do any more file manipiiulation we zip all the subjects, including all the files into zip files with file side cars
+- Before we do any more file manipulation we zip all the subjects, including all the files into zip files with file side cars
   - Zip file may be named date (starting with year) tracer, source of subjects, number of subjects, e.g., dte-250826_trc-tau_source-adni_subjectsN-150.zip
   - Include the code directory with all the logs into the backup
-  - Text file side car should be named identically as the zip file except that it has the suffix _readme.txt, e.g., dte-250826_trc-tau_source-adni_subjectsN-150_readme.txt
-    - The readme files should start with a text describing the what processing was done to the subjects in the zip file (could just be a copy and paste of this text), followed by a list of all the subject IDs that are included in the zip file
-  - Please keep the zip files smaller than 3GB
+  - Text file side car should be named identically as the zip file except that it has the extra suffix _readme.txt, e.g., dte-250826_trc-tau_source-adni_subjectsN-150_readme.txt
+    - The readme files should start with a text describing the what processing was done to the subjects in the zip file (could just be a copy and paste of this text), followed by a list of all the subject IDs and session dates that are included in the zip file
+  - Please keep the zip files smaller than 100GB
   - If the all subjects do not fit in a single file and you are packaging multiple zip-files from same project starting in the night and continuing next day the same project should still have the same date (to keep them together) and since they are multiple files we should have multiple packages so example of zip file names could be dte-250826_trc-tau_source-adni_subjectsN-150_pack1.zip, dte-250826_trc-tau_source-adni_subjectsN-150_pack2.zip dte-250826_trc-tau_source-adni_subjectsN-150_pack3.zip
 - After the zip file is created we create a BIDS directory under /data/qneuromark/Data/ADNI/PET_tracers
   - If a previous location already exists where these files should be amended, that is the the first option to place your newly created files
