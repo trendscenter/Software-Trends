@@ -1,7 +1,7 @@
 # Post Script Moving Files to Production
 
 Date: 8/26/2025
-By: Cyrus Eierud & Helen Petropoulos
+By: Cyrus Eierud
 
 First all the PET scripts (FreeSurfer, MC, PetPrep, intensity normalisation) have been run successfully and quality assured similar as following:
 - All original PET and T1s have been collected to the root BIDS directory
