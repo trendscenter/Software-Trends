@@ -18,8 +18,8 @@ Then we should move the results to production the following way
   - If the all subjects do not fit in a single file and you are packaging multiple zip-files from same project starting in the night and continuing next day the same project should still have the same date (to keep them together) and since they are multiple files we should have multiple packages so example of zip file names could be dte-250826_trc-tau_source-adni_subjectsN-150_pack1.zip, dte-250826_trc-tau_source-adni_subjectsN-150_pack2.zip dte-250826_trc-tau_source-adni_subjectsN-150_pack3.zip
 - After the zip file is created we create a BIDS directory under /data/qneuromark/Data/ADNI/PET_tracers
   - If a previous location already exists where these files should be amended, that is the the first option to place your newly created files
-  - Otherwise please create a new fitting folder name to host your BIDS files
-  - In this BIDS dir there should not be any code directory nor 
+  - Otherwise please create a new fitting folder name to host our BIDS files
+  - In this BIDS dir there should not be any code directory  
 - Origiinal (unprocessed) PET and T1 files existing in the root BIDS directory should be moved to the designated folder under /data/qneuromark/Data/ADNI/PET_tracers. This included PET and T1s that did not pass quality assurance
 - Create directories needed under the /data/qneuromark/Data/ADNI/PET_tracers for the derivatives
 - Move the following files for all subjects that passed quality assurance, where XXXX is the subject number and YYMMDD is the year, month and date, to its location it belongs in accordance with BIDS specifications under /data/qneuromark/Data/ADNI/PET_tracers/derivatives
