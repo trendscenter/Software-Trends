@@ -16,8 +16,8 @@ Then we should move the results to production the following way
     - The readme files should start with a text describing the what processing was done to the subjects in the zip file (could just be a copy and paste of this text), followed by a list of all the subject IDs and session dates that are included in the zip file
   - Please keep the zip files smaller than 100GB
   - If the all subjects do not fit in a single file and you are packaging multiple zip-files from same project starting in the night and continuing next day the same project should still have the same date (to keep them together) and since they are multiple files we should have multiple packages so example of zip file names could be dte-250826_trc-tau_source-adni_subjectsN-150_pack1.zip, dte-250826_trc-tau_source-adni_subjectsN-150_pack2.zip dte-250826_trc-tau_source-adni_subjectsN-150_pack3.zip
-- After the zip file is created we create a BIDS directory under /data/qneuromark/Data/ADNI/PET_tracers
-  - If a previous location already exists where these files should be amended, that is the the first option to place your newly created files
+- After the zip file is created we create a BIDS directory under /data/qneuromark/Data/ADNI/PET_tracers (this is just a folder, to place subsequent files)
+  - If a previous location already exists where these files should be amended, that is the the first option to place your newly created files (no folder needs to be created)
   - Otherwise please create a new fitting folder name to host our BIDS files
   - In this BIDS dir there should not be any code directory  
 - Original (unprocessed) PET and T1 files existing in the root BIDS directory should be moved to the designated folder under /data/qneuromark/Data/ADNI/PET_tracers. This included PET and T1s that did not pass quality assurance
